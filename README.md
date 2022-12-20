@@ -71,3 +71,7 @@ However, the default mac terminal doesn't handle the wide range of Foreground an
     * Run `curl -sS https://starship.rs/install.sh | sh`
     * Enable in fish by appending `starship init fish | source` to `~/.config/fish/config.fish`
     * Copy the same TOML file used for Windows (after all it´s a cross-platform solution)
+
+## Misc
+
+When editing the TOML file (or even when creating your own PS1 customizations), it's handy to have access to the list of symbols patched to the font. For that access the [Nerd Font Cheat Sheet](https://www.nerdfonts.com/cheat-sheet).
