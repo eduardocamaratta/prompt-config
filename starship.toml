@@ -1,0 +1,64 @@
+# Get editor completions based on the config schema
+#"$schema" = 'https://starship.rs/config-schema.json'
+
+# Symbols codes: https://www.nerdfonts.com/cheat-sheet
+
+format = """
+[\ue0b6](#9A348E)\
+[\uf007 ](bg:#9A348E fg:#FFFFFF)$username\
+[\ue0b0](bg:#DA627D fg:#9A348E)\
+[ \uf07c](fg:#000000 bg:#DA627D)\
+$directory\
+[\ue0b0](fg:#DA627D bg:#FCA17D)\
+[ \ue0a0](fg:#000000 bg:#FCA17D)\
+$git_branch\
+$git_status\
+[\ue0b0](fg:#FCA17D bg:#33658A)\
+[ \uf64f](bg:#33658A fg:#FFFFFF)\
+$time\
+[\ue0b4](fg:#33658A)
+[\\$](fg:#909090) 
+"""
+ 
+# Disable the blank line at the start of the prompt
+# add_newline = true
+ 
+# You can also replace your username with a neat symbol like  to save some space
+[username]
+show_always = true
+style_user = "bg:#9A348E"
+style_root = "bg:#9A348E"
+format = '[$user ]($style)'
+
+[directory]
+style = "fg:#000000 bg:#DA627D"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+ 
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = "📄 "
+"Downloads" = "📥 "
+"Music" = "🎜 "
+"Pictures" = "📷 "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = "  "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important  " = "  "
+
+[git_branch]
+style = "fg:#000000 bg:#FCA17D"
+format = '[[ $branch ](fg:#000000 bg:#FCA17D)]($style)'
+
+[git_status]
+style = "fg:#000000 bg:#FCA17D"
+format = '[[($all_status$ahead_behind )](bg:#FCA17D fg:#000000)]($style)'
+
+[time]
+disabled = false
+time_format = "%T" # Hour:Minute:Second Format
+style = "bg:#33658A"
+format = '[[ $time ](bg:#33658A)]($style)'
