@@ -63,6 +63,8 @@ Also worked well just after selecting the desired font.
 
 Just configuring the current terminal to use the chosen font worked as expected.
 
+However, the default mac terminal doesn't handle the wide range of Foreground and Background colors used by Starship. For that I had to install iTerm2, in Preferences > Profiles > Text configure the same font for both ASCII and Non-ASCII, increase size to 15 and enable ligatures. With that configured, prompt looks the same as in Windows.
+
 ### Starship
 
 1. Installation
