@@ -19,6 +19,8 @@ $time\
 [\ue0b4](fg:#33658A)
 [\\$](fg:#909090) 
 """
+
+command_timeout = 500
  
 # Disable the blank line at the start of the prompt
 # add_newline = true
