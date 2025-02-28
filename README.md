@@ -49,7 +49,7 @@ Configure the terminal to use it: Settings > Default > Appearance
 
 ### Font
 
-Installed only the mono font, as it covers both cases (development and terminal). Installation was smooth and later font (and it's name) can be checked in the Font Book.
+Installed only the mono font, as it covers both cases (development and terminal). Installation was smooth and later font (and its name) can be checked in the Font Book.
 
 ### VSCode
 
