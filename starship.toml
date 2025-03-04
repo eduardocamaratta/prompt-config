@@ -20,7 +20,7 @@ $time\
 [\\$](fg:#909090) 
 """
 
-command_timeout = 500
+command_timeout = 750
 
 # Disable the blank line at the start of the prompt
 # add_newline = true
