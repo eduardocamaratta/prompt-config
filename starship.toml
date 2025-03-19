@@ -61,6 +61,6 @@ format = '[[($all_status$ahead_behind )](bg:#FCA17D fg:#000000)]($style)'
 
 [time]
 disabled = false
-time_format = "%T" # Hour:Minute:Second Format
+time_format = "%T CW%V" # Hour:Minute:Second Format
 style = "bg:#33658A"
 format = '[[ $time ](bg:#33658A)]($style)'
