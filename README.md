@@ -10,14 +10,14 @@ First source material was the [youtube video](https://www.youtube.com/watch?v=Nf
 
 ### Font
 
-Using a fancy prompt starts by installing a font which supports symbols. A while ago Konrad Gibaszwesky showed me [FiraCode](https://github.com/tonsky/FiraCode), which has very nice ligatures. I could install it directly from the GitHub page, but a fancy prompt would require more symbols than the basic ones.
+Using a fancy prompt starts by installing a font which supports symbols. A while ago a friend showed me [FiraCode](https://github.com/tonsky/FiraCode), which has very nice ligatures. I could install it directly from the GitHub page, but a fancy prompt would require more symbols than the basic ones.
 
 In order to achieve that, it's necessary to patch the chosen font with the wanted symbols. Fortunately this problem is already solved by [NerdFonts](https://www.nerdfonts.com/font-downloads) which provides several known developer fonts already patched with a large catalog of icons and symbols.
 
 I selected **FiraCode Mono**, as it makes more sense (IMO) for both development and terminal usage.
 
 
-## Windows
+## Windows (WSL)
 
 ### Font
 
@@ -33,9 +33,11 @@ Configure the terminal to use it: Settings > Default > Appearance
 1. Install [Starship prompt](https://starship.rs/guide/#%F0%9F%9A%80-installation)
     * Run `curl -sS https://starship.rs/install.sh | sh`
     * Add `eval "$(starship init bash)"` to the end of the bashrc file
-2. [Configure](https://starship.rs/config/#prompt) Starship
-    * Run `mkdir -p ~/.config && touch ~/.config/starship.toml`
-3. I started configuration by copying a preset from the internet and editing it. Source: https://www.maketecheasier.com/customize-linux-terminal-prompt-using-starship/
+2. Clone this repository
+3. [Configure](https://starship.rs/config/#prompt) Starship*
+    * Run `mkdir -p ~/.config; cd ~/.config; ln -s <REPOSITORY-LOCATION-FROM-PREVIOUS-STEP>/starship.toml starship.toml`
+
+*I started configuration by copying a preset from the internet and editing it. Source: https://www.maketecheasier.com/customize-linux-terminal-prompt-using-starship/
 
 ### Configuring VSCode
 
@@ -70,7 +72,7 @@ However, the default mac terminal doesn't handle the wide range of Foreground an
 1. Installation
     * Run `curl -sS https://starship.rs/install.sh | sh`
     * Enable in fish by appending `starship init fish | source` to `~/.config/fish/config.fish`
-    * Copy the same TOML file used for Windows (after all it´s a cross-platform solution)
+    * Use the same symbolic link strategy used on the Windows section of this guide (after all it´s a cross-platform solution)
 
 ## Misc
 
