@@ -4,20 +4,19 @@
 # Symbols codes: https://www.nerdfonts.com/cheat-sheet
 
 format = """
-[\ue0b6](#9A348E)\
-[\uf007 ](bg:#9A348E fg:#FFFFFF)$username\
-[\ue0b0](bg:#DA627D fg:#9A348E)\
-[ \uf07c](fg:#000000 bg:#DA627D)\
+[ \uf007 ](bg:#3B237A fg:#FFFFFF)$username\
+[\ue0b4](bg:#33658A fg:#3B237A)\
+[ \uf07c](bg:#33658A fg:#FFFFFF)\
 $directory\
-[\ue0b0](fg:#DA627D bg:#FCA17D)\
-[ \ue0a0](fg:#000000 bg:#FCA17D)\
+[\ue0b4](bg:#86BBD8 fg:#33658A)\
+[ \ue0a0](fg:#000000 bg:#86BBD8)\
 $git_branch\
 $git_status\
-[\ue0b0](fg:#FCA17D bg:#33658A)\
-[ \uf017](bg:#33658A fg:#FFFFFF)\
+[\ue0b4](fg:#86BBD8 bg:#ABABAB)\
+[ \uf017](bg:#ABABAB fg:#000000)\
 $time\
-[\ue0b4](fg:#33658A)
-[\\$](fg:#909090) 
+[\ue0b4](fg:#ABABAB)
+[>](fg:#B497FF) 
 """
 
 command_timeout = 750
@@ -28,12 +27,12 @@ command_timeout = 750
 # You can also replace your username with a neat symbol like  to save some space
 [username]
 show_always = true
-style_user = "bg:#9A348E"
-style_root = "bg:#9A348E"
+style_user = "fg:#ffffff bg:#3B237A"
+style_root = "fg:#ffffff bg:#3B237A"
 format = '[$user ]($style)'
 
 [directory]
-style = "fg:#000000 bg:#DA627D"
+style = "fg:#ffffff bg:#33658A"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -52,15 +51,15 @@ truncation_symbol = "…/"
 # "Important  " = "  "
 
 [git_branch]
-style = "fg:#000000 bg:#FCA17D"
-format = '[[ $branch ](fg:#000000 bg:#FCA17D)]($style)'
+style = "fg:#000000 bg:#86BBD8"
+format = '[[ $branch ](fg:#000000 bg:#86BBD8)]($style)'
 
 [git_status]
-style = "fg:#000000 bg:#FCA17D"
-format = '[[($all_status$ahead_behind )](bg:#FCA17D fg:#000000)]($style)'
+style = "fg:#000000 bg:#86BBD8"
+format = '[[($all_status$ahead_behind )](bg:#86BBD8 fg:#000000)]($style)'
 
 [time]
 disabled = false
-time_format = "%T CW%V" # Hour:Minute:Second Format
-style = "bg:#33658A"
-format = '[[ $time ](bg:#33658A)]($style)'
+time_format = "%T CW%V" # Hour:Minute:Second CalendarWeek
+style = "fg:#000000 bg:#ABABAB"
+format = '[[ $time ](fg:#000000 bg:#ABABAB)]($style)'
