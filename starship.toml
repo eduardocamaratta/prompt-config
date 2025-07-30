@@ -1,21 +1,27 @@
 # Get editor completions based on the config schema
 #"$schema" = 'https://starship.rs/config-schema.json'
 
-# Symbols codes: https://www.nerdfonts.com/cheat-sheet
+# Symbols reference https://www.nerdfonts.com/cheat-sheet
+# e0b4 , e0ba , e0bc , e0b0 , e691 , # f007 , f07c , e0a0 , f017 , f075a 󰝚
+
+# Blue
+#3B237A #FFFFFF
+#33658A #FFFFFF
+#86BBD8 #000000
+#ABABAB #000000
+#B497FF
 
 format = """
-[ \uf007 ](bg:#3B237A fg:#FFFFFF)$username\
-[\ue0b4](bg:#33658A fg:#3B237A)\
-[ \uf07c](bg:#33658A fg:#FFFFFF)\
+$username\
+[](bg:#33658A fg:#3B237A)\
 $directory\
-[\ue0b4](bg:#86BBD8 fg:#33658A)\
-[ \ue0a0](fg:#000000 bg:#86BBD8)\
+[](bg:#86BBD8 fg:#33658A)\
+[ ](fg:#000000 bg:#86BBD8)\
 $git_branch\
 $git_status\
-[\ue0b4](fg:#86BBD8 bg:#ABABAB)\
-[ \uf017](bg:#ABABAB fg:#000000)\
+[](fg:#86BBD8 bg:#ABABAB)\
 $time\
-[\ue0b4](fg:#ABABAB)
+[](fg:#ABABAB)
 [>](fg:#B497FF) 
 """
 
@@ -29,11 +35,11 @@ command_timeout = 750
 show_always = true
 style_user = "fg:#ffffff bg:#3B237A"
 style_root = "fg:#ffffff bg:#3B237A"
-format = '[$user ]($style)'
+format = "[  $user ]($style)"
 
 [directory]
 style = "fg:#ffffff bg:#33658A"
-format = "[ $path ]($style)"
+format = "[  $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
@@ -42,7 +48,7 @@ truncation_symbol = "…/"
 [directory.substitutions]
 "Documents" = "📄 "
 "Downloads" = "📥 "
-"Music" = "🎜 "
+"Music" = "󰝚 "
 "Pictures" = "📷 "
 # Keep in mind that the order matters. For example:
 # "Important Documents" = "  "
@@ -62,4 +68,4 @@ format = '[[($all_status$ahead_behind )](bg:#86BBD8 fg:#000000)]($style)'
 disabled = false
 time_format = "%T CW%V" # Hour:Minute:Second CalendarWeek
 style = "fg:#000000 bg:#ABABAB"
-format = '[[ $time ](fg:#000000 bg:#ABABAB)]($style)'
+format = '[[  $time ](fg:#000000 bg:#ABABAB)]($style)'
