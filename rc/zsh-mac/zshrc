@@ -1,3 +1,6 @@
+# Prevent commands started with a space from being saved to $HOME/.zsh_history
+setopt HIST_IGNORE_SPACE
+
 # Aliases
 if [ -f ~/.zsh/zshaliases ]; then
     source ~/.zsh/zshaliases
