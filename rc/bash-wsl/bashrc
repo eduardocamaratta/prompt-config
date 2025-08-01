@@ -118,7 +118,7 @@ if [ -f ~/git-completion.bash ]; then
 fi
 
 # Mise
-eval "$(/home/eduardo/.local/bin/mise activate bash)"
+eval "$($HOME/.local/bin/mise activate bash)"
 
 # Starship configuration
 eval "$(starship init bash)"
