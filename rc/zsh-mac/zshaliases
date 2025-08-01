@@ -1,0 +1,13 @@
+# Shell commands
+alias c='clear'
+alias l='ls -lah'
+
+# Git
+alias gb='git branch'
+alias gc='git checkout'
+alias gp='git pull'
+alias grpo='git remote prune origin'
+# TODO: make it smarter detecting if there's a git repo and in case there's not just list (ls -lah)
+
+# Folders
+alias dev='cd $HOME/dev'

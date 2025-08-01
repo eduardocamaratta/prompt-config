@@ -1,0 +1,8 @@
+# Runs git status in case the folder it's a git repository, otherwise executes ls
+function s () {
+    if [[ $(git rev-parse --is-inside-work-tree 2>/dev/null) ]]; then
+        git status;
+    else
+        ls -lah;
+    fi;
+}
