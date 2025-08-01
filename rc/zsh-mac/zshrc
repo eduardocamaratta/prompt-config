@@ -16,7 +16,7 @@ autoload -Uz compinit && compinit
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # Starship Configuration for Zsh
-if command -V starship; then
+if command -V starship &>/dev/null; then
     eval "$(starship init zsh)"
 fi
 
@@ -40,7 +40,7 @@ if [ -f ~/.zsh/work-config ]; then
 fi
 
 # Rbenv initialization
-if command -V rbenv; then
+if command -V rbenv &>/dev/null; then
     eval "$(rbenv init -)"
 fi
 
