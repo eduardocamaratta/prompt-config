@@ -2,13 +2,13 @@
 setopt HIST_IGNORE_SPACE
 
 # Aliases
-if [ -f ~/.zsh/zshaliases ]; then
-    source ~/.zsh/zshaliases
+if [ -f $HOME/.zsh/zshaliases ]; then
+    source $HOME/.zsh/zshaliases
 fi
 
 # # Functions
-if [ -f ~/.zsh/zshfunctions ]; then
-    source ~/.zsh/zshfunctions
+if [ -f $HOME/.zsh/zshfunctions ]; then
+    source $HOME/.zsh/zshfunctions
 fi
 
 # Git completion
@@ -30,16 +30,18 @@ if [ -f /opt/homebrew/bin/brew ]; then
 fi
 
 # Mint
-export PATH="$PATH:$HOME/.mint/bin";
+if [ -d $HOME/.mint/bin ]; then
+    export PATH="$PATH:$HOME/.mint/bin";
+fi
 
 # Mise
-if [ -f ~/.local/bin/mise ]; then
+if [ -f $HOME/.local/bin/mise ]; then
     eval "$($HOME/.local/bin/mise activate zsh)";
 fi
 
 # Work-specific configuration
-if [ -f ~/.zsh/work-config ]; then
-    source ~/.zsh/work-config;
+if [ -f $HOME/.zsh/work-config ]; then
+    source $HOME/.zsh/work-config;
 fi
 
 # Rbenv initialization
