@@ -33,14 +33,14 @@
 
 # Optional first section
 #[  ](fg:#FFFFFF bg:#903284)\
-#[](fg:prev_bg bg:#3B237A)$username\
+#[](fg:prev_bg bg:#3B237A)$username\
 
 format = """
 $username\
-[](fg:prev_bg bg:#33658A)$directory\
-([](fg:prev_bg bg:#7AB2D3)$git_branch$git_status)\
-[](fg:prev_bg bg:#ABABAB)$time
-[>](fg:#B497FF) 
+[](fg:prev_bg bg:#F0986F)$directory\
+([](fg:prev_bg bg:#7AB2D3)$git_branch$git_status)\
+[](fg:prev_bg bg:#2C597F)$time
+[>](fg:#D0D0D0) 
 """
 
 command_timeout = 750
@@ -50,14 +50,14 @@ add_newline = true
 # You can also replace your username with a neat symbol like  to save some space
 [username]
 show_always = true
-style_user = "fg:#FFFFFF bg:#3B237A"
-style_root = "fg:#FFFFFF bg:#3B237A"
+style_user = "fg:#FFFFFF bg:#D65B71"
+style_root = "fg:#FFFFFF bg:#D65B71"
 format = "[  $user ]($style)"
 
 [directory]
 truncation_length = 3
 truncation_symbol = "…/"
-style = "fg:#000000 bg:#33658A"
+style = "fg:#000000 bg:#F0986F"
 format = "[  $path ]($style)"
 
 # Here is how you can shorten some long paths by text replacement
@@ -69,15 +69,15 @@ format = "[  $path ]($style)"
 "Pictures" = "📷 "
 
 [git_branch]
-style = "fg:#000000 bg:#86BBD8"
+style = "fg:#000000 bg:#7AB2D3"
 format = "[  $branch ]($style)"
 
 [git_status]
-style = "fg:#000000 bg:#86BBD8"
+style = "fg:#000000 bg:#7AB2D3"
 format = '[$all_status$ahead_behind ]($style)'
 
 [time]
 disabled = false
 time_format = "%T 󰃭 CW%V" # Hour:Minute:Second  CalendarWeek
-style = "fg:#000000 bg:#ABABAB"
-format = "[  $time [](#ABABAB)]($style)"
+style = "fg:#FFFFFF bg:#2C597F"
+format = "[  $time [](#2C597F)]($style)"
