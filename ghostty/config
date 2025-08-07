@@ -52,3 +52,5 @@ background = #1D1D1D
 # # which is explained in the docs for that config option.
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
+
+background-opacity = 0.9
