@@ -15,3 +15,5 @@ alias grpo='git remote prune origin'
 alias s='git status'
 alias gb='git branch'
 alias gc='git checkout'
+
+alias dev='cd $HOME/dev'

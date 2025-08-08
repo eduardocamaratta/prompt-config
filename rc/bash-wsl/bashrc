@@ -94,8 +94,8 @@ fi
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f $HOME/.bash_aliases ]; then
+    . $HOME/.bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -113,8 +113,13 @@ fi
 # Check git version with: git version
 # Select correspondent tag on https://github.com/git/git
 # Copy git-completion.bash from contrib/completion, execute it on your bashrc
-if [ -f ~/git-completion.bash ]; then
-    . ~/git-completion.bash
+if [ -f $HOME/git-completion.bash ]; then
+    . $HOME/git-completion.bash
+fi
+
+# Platform-specific/private configuration
+if [ -f $HOME/.bash/platform-specific-config ]; then
+    . $HOME/.bash/platform-specific-config
 fi
 
 # Mise
