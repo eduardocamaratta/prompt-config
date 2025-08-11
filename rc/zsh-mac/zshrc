@@ -39,9 +39,9 @@ if [ -f $HOME/.local/bin/mise ]; then
     eval "$($HOME/.local/bin/mise activate zsh)";
 fi
 
-# Work-specific configuration
-if [ -f $HOME/.zsh/work-config ]; then
-    source $HOME/.zsh/work-config;
+# Platform-specific/private configuration
+if [ -f $HOME/.zsh/platform-specific-config ]; then
+    source $HOME/.zsh/platform-specific-config;
 fi
 
 # Rbenv initialization
