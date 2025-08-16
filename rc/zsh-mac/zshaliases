@@ -11,3 +11,6 @@ alias grpo='git remote prune origin'
 
 # Folders
 alias dev='cd $HOME/dev'
+
+# Apps
+alias brave='/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser'
