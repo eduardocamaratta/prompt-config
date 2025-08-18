@@ -18,3 +18,6 @@ alias s='git status'
 
 # Folders
 alias dev='cd $HOME/dev'
+
+# Applications
+alias brave='/mnt/c/Program\ Files/BraveSoftware/Brave-Browser/Application/brave.exe'
