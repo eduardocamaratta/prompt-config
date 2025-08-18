@@ -6,11 +6,6 @@ if [ -f $HOME/.zsh/zshaliases ]; then
     source $HOME/.zsh/zshaliases
 fi
 
-# # Functions
-if [ -f $HOME/.zsh/zshfunctions ]; then
-    source $HOME/.zsh/zshfunctions
-fi
-
 # Git completion
 # ZSH does git completion out of the box, but it needs to be enabled
 autoload -Uz compinit && compinit
@@ -24,7 +19,7 @@ if command -V starship &>/dev/null; then
 fi
 
 # Homebrew
-# Removed a line that was adding, each time this was executed, the same eval to .zprofile
+# Removed a line that was adding the same eval to .zprofile each time this was executed
 if [ -f /opt/homebrew/bin/brew ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)";
 fi
