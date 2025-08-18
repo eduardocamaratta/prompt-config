@@ -1,13 +1,16 @@
 # Shell commands
-alias c='clear'
+alias ll='ls -alF'
+alias la='ls -A'
 alias l='ls -lah'
+alias c='clear'
 
 # Git
+# TODO: make it smarter detecting if there's a git repo and in case there's not just list (ls -lah)
 alias gb='git branch'
 alias gc='git checkout'
 alias gp='git pull'
 alias grpo='git remote prune origin'
-# TODO: make it smarter detecting if there's a git repo and in case there's not just list (ls -lah)
+alias s='git status'
 
 # Folders
 alias dev='cd $HOME/dev'

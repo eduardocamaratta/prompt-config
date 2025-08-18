@@ -1,19 +1,20 @@
-# some more ls aliases
+# Shell commands
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -lah'
+alias c='clear'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# bash aliases
-alias c='clear'
-# git aliases
+# Git
+# TODO: make all smarter detecting if there's a git repo and in case there's not just list (ls -lah)
+alias gb='git branch'
+alias gc='git checkout'
 alias gp='git pull'
 alias grpo='git remote prune origin'
 alias s='git status'
-alias gb='git branch'
-alias gc='git checkout'
 
+# Folders
 alias dev='cd $HOME/dev'
