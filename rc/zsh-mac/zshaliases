@@ -5,15 +5,16 @@ alias l='ls -lah'
 alias c='clear'
 
 # Git
-# TODO: make it smarter detecting if there's a git repo and in case there's not just list (ls -lah)
-alias gb='git branch'
-alias gc='git checkout'
-alias gp='git pull'
-alias grpo='git remote prune origin'
-alias s='git status'
+run_git_command_if_git_repo() { if git status > /dev/null 2>&1; then git "$@"; else l; fi }
+alias gd='run_git_command_if_git_repo diff'
+alias gb='run_git_command_if_git_repo branch'
+alias gc='run_git_command_if_git_repo checkout'
+alias gp='run_git_command_if_git_repo pull'
+alias grpo='run_git_command_if_git_repo remote prune origin'
+alias s='run_git_command_if_git_repo status'
 
 # Folders
 alias dev='cd $HOME/dev'
 
-# Apps
+# Applications
 alias brave='/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser'
