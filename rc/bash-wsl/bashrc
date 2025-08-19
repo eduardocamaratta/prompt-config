@@ -129,4 +129,4 @@ eval "$($HOME/.local/bin/mise activate bash)"
 eval "$(starship init bash)"
 
 # Default directory
-cd $HOME/dev/
+dev
