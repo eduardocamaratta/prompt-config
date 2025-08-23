@@ -1,5 +1,7 @@
-# Prevent commands started with a space from being saved to $HOME/.zsh_history
+# Prevent commands started with a space from being saved to history, ignore contiguous duplicates and certain commands
 setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_DUPS
+export HISTORY_IGNORE="c|l|s|ls"
 
 # Aliases
 if [ -f $HOME/.zsh/zshaliases ]; then
