@@ -2,7 +2,7 @@
 # "$schema" = 'https://starship.rs/config-schema.json'
 
 # Symbols used (https://www.nerdfonts.com/cheat-sheet)
-# e0b4 , e0ba , e0bc , e0b0 , e691 , # f007 , f07c , e0a0 , f017 , f00ed 󰃭, e0c6 , f075a 󰝚
+# e0b6 , e0b4 , e0ba , e0bc , e0b8 , e0b0 , e691 , # f007 , f07c , e0a0 , f017 , f00ed 󰃭, e0c6 , f075a 󰝚
 
 # Hints
 # * When a string is enclosed by parenthesis, it doesn't render if all variables inside are None or empty
@@ -37,9 +37,9 @@
 
 format = """
 $username\
-[](fg:prev_bg bg:#F0986F)$directory\
-([](fg:prev_bg bg:#7AB2D3)$git_branch$git_status)\
-[](fg:prev_bg bg:#2C597F)$time
+[](fg:#F0986F bg:prev_bg)$directory\
+([](fg:#7AB2D3 bg:prev_bg)$git_branch$git_status)\
+[](fg:#2C597F bg:prev_bg)$time
 [>](fg:#D0D0D0) 
 """
 
@@ -52,13 +52,13 @@ add_newline = true
 show_always = true
 style_user = "fg:#FFFFFF bg:#D65B71"
 style_root = "fg:#FFFFFF bg:#D65B71"
-format = "[  $user ]($style)"
+format = "[](fg:#D65B71)[ $user ]($style)"
 
 [directory]
 truncation_length = 3
 truncation_symbol = "…/"
 style = "fg:#000000 bg:#F0986F"
-format = "[  $path ]($style)"
+format = "[ $path ]($style)"
 
 # Here is how you can shorten some long paths by text replacement
 # similar to mapped_locations in Oh My Posh:
@@ -70,7 +70,7 @@ format = "[  $path ]($style)"
 
 [git_branch]
 style = "fg:#000000 bg:#7AB2D3"
-format = "[  $branch ]($style)"
+format = "[ $branch ]($style)"
 
 [git_status]
 style = "fg:#000000 bg:#7AB2D3"
@@ -80,4 +80,4 @@ format = '[$all_status$ahead_behind ]($style)'
 disabled = false
 time_format = "%T 󰃭 CW%V" # Hour:Minute:Second  CalendarWeek
 style = "fg:#FFFFFF bg:#2C597F"
-format = "[  $time [](#2C597F)]($style)"
+format = "[ $time [](#2C597F)]($style)"
