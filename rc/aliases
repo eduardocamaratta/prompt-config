@@ -1,3 +1,5 @@
+# For bash this file is expected at ~/.bash_aliases and for zsh at ~/.zsh_aliases
+
 # Shell commands
 alias ll='ls -alF'
 alias la='ls -A'
@@ -28,9 +30,7 @@ alias dev='cd $HOME/dev'
 # Applications
 if uname -a | grep -i microsoft > /dev/null 2>&1; then
     alias brave='/mnt/c/Program\ Files/BraveSoftware/Brave-Browser/Application/brave.exe'
+elif uname -a | grep -i darwin > /dev/null 2>&1; then
+    alias brave='/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser'
 # TODO: alias for linux
 fi
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-# alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'

@@ -4,8 +4,8 @@ setopt HIST_IGNORE_DUPS
 export HISTORY_IGNORE="c|l|s|ls"
 
 # Aliases
-if [ -f $HOME/.zsh/zshaliases ]; then
-    source $HOME/.zsh/zshaliases
+if [ -f $HOME/.zsh_aliases ]; then
+    source $HOME/.zsh_aliases
 fi
 
 # Git completion
