@@ -4,6 +4,15 @@ alias la='ls -A'
 alias l='ls -lah'
 alias c='clear'
 
+# CD that also works with a number argument, that makes it go N directories up in the hierarchy
+function cdx() {
+    if [[ $1 =~ ^[0-9]+$ ]]; then
+        cd $(printf "%0.s../" $(seq 1 $1));
+    else
+        cd $1;
+    fi
+}
+
 # Git
 run_git_command_if_git_repo() { if git status > /dev/null 2>&1; then git "$@"; else l; fi }
 alias gd='run_git_command_if_git_repo diff'
@@ -18,3 +27,4 @@ alias dev='cd $HOME/dev'
 
 # Applications
 alias brave='/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser'
+
