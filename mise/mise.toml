@@ -1,6 +1,6 @@
 [tools]
 jq = "1.8.1"
-node = "24.6.0"
+node = "24.10.0"
 
 [settings]
 # All config files on these prefixes will be trusted
