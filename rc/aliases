@@ -4,7 +4,8 @@
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -lah'
-alias c='clear'
+alias c='printf "\e[H\e[22J"' # Clears screen but not scrollback
+alias clear=c
 
 # CD that also works with a number argument, that makes it go N directories up in the hierarchy
 function cdx() {
