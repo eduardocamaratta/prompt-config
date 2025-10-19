@@ -4,8 +4,13 @@
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -lah'
-alias c='printf "\e[H\e[22J"' # Clears screen but not scrollback
-alias clear=c
+# Only where Ghostty is used (not Windows)
+if ! uname -a | grep -i microsoft > /dev/null 2>&1; then
+    alias c='printf "\e[H\e[22J"' # Clears screen but not scrollback
+    alias clear=c
+else
+    alias c='clear'
+fi
 
 # CD that also works with a number argument, that makes it go N directories up in the hierarchy
 function cdx() {
