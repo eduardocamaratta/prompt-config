@@ -1,11 +1,11 @@
 [tools]
 jq = "1.8.1"
 node = "25.0.0"
+ruby = "3.4.7"
 
 [settings]
 # All config files on these prefixes will be trusted
 trusted_config_paths = [
     '~/dev',
 ]
-# Enable only for node that has been tested on all platforms
-idiomatic_version_file_enable_tools = ['node']
+idiomatic_version_file_enable_tools = ['node', "ruby"]
