@@ -44,7 +44,7 @@ If you don't plan to use Zsh (on Mac) or Bash (WSL and Linux) then at this point
 
 ## Dev Tools Management: Mise
 
-I highly recommend having mise installed. It's a lightweight prompt injection that manages dev tools, environment variables and tasks. Mise can not only manage versions for several languages (think of it as nvm & rvm together) but also several developer tools, similarly to how languages are managed. It allows to easily replicate a development environment without having to resort to containers. Even if a certain project doesn't have a mise config, you can create your own mise.toml file to keep your environment consistent for that project. Same for your whole system, you could always have your set of developer tools installed.
+I highly recommend having mise installed. It's a lightweight prompt injection that manages dev tools, environment variables and tasks. Mise can not only manage versions for several languages (think of it as nvm & rvm together) but also several developer tools, similarly to how languages are managed. It allows to easily replicate a development environment without having to resort to containers. Even if a certain project doesn't have a mise config, you can create your own mise.local.toml file to keep your environment consistent for that project. Same for your whole system, you could always have your set of developer tools managed with a ~/.config/mise/config.toml file.
 
 ## Shell
 
