@@ -11,11 +11,22 @@ trusted_config_paths = [
 idiomatic_version_file_enable_tools = ['node', "ruby"]
 
 # Ruby is sometimes a bit tricky to install with mise
-# One issue I had was:
-# following extensions are not compiled: psych: Could not be configured. It will not be installed.
+
+# The issue I had on macOS:
+# * following extensions are not compiled: psych: Could not be configured. It will not be installed.
 # Solved with the following:
-# brew reinstall libyaml
-# gem install psych -- --with-libyaml-dir=$(brew --prefix libyaml)
-# sudo gem install psych -- --with-libyaml-dir=$(brew --prefix libyaml)
-# export RUBY_CONFIGURE_OPTS=--with-libyaml-dir=$(brew --prefix libyaml)
+# > brew reinstall libyaml
+# > gem install psych -- --with-libyaml-dir=$(brew --prefix libyaml)
+# > sudo gem install psych -- --with-libyaml-dir=$(brew --prefix libyaml)
+# > export RUBY_CONFIGURE_OPTS=--with-libyaml-dir=$(brew --prefix libyaml)
 # and then running mise install again installed latest ruby without issues
+
+# The issues I had on WSL:
+# * gcc wasn't installed
+# > sudo apt update
+# > sudo apt upgrade -y
+# > sudo apt install build-essential -y
+# * ruby compilation failed with: fatal error: zlib.h: No such file or directory
+# > sudo apt install zlib1g-dev
+# * ruby installation failed with: can't install following extensions are not compiled fiddle psych
+# > sudo apt-get install libyaml-dev libffi-dev
