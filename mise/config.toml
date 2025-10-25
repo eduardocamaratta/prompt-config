@@ -21,7 +21,7 @@ idiomatic_version_file_enable_tools = ['node', "ruby"]
 # > export RUBY_CONFIGURE_OPTS=--with-libyaml-dir=$(brew --prefix libyaml)
 # and then running mise install again installed latest ruby without issues
 
-# The issues I had on WSL:
+# The issues I had on WSL and Mint (only difference is Linux already had gcc installed):
 # * gcc wasn't installed
 # > sudo apt update
 # > sudo apt upgrade -y
