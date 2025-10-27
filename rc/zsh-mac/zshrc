@@ -41,10 +41,7 @@ if [ -f $HOME/.zsh/platform-specific-config ]; then
     source $HOME/.zsh/platform-specific-config;
 fi
 
-# Rbenv initialization
-if command -V rbenv &>/dev/null; then
-    eval "$(rbenv init -)"
-fi
+# This used to be the rbenv initialization section, but now ruby versions are being managed by Mise
 
 # Default folder
 dev
