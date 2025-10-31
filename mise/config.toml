@@ -8,7 +8,20 @@ ruby = "3.4.7"
 trusted_config_paths = [
     '~/dev',
 ]
-idiomatic_version_file_enable_tools = ['node', "ruby"]
+idiomatic_version_file_enable_tools = ["node", "ruby"]
+
+[tasks.unused-tools]
+description = "Lists and optionally uninstall unused mise tools"
+usage = '''
+flag "-u --uninstall" help="If present uninstall unused tools instead of just listing them"
+'''
+run = '''
+#!/usr/bin/env bash
+mise ls --prunable;
+if [ "${usage_uninstall:-false}" = "true" ]; then
+    mise ls --prunable --json | jq -r 'to_entries[] | .key + "@" + .value[].version' | xargs mise uninstall
+fi
+'''
 
 # Ruby is sometimes a bit tricky to install with mise
 
