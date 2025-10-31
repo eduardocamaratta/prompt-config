@@ -44,3 +44,6 @@ fi
 # PR creation/merging to main from development, named 'wip' in this case. Expects a BRANCH env variable to be defined
 alias createpr='git checkout -b $BRANCH; git push origin $BRANCH; git checkout main; git branch -D $BRANCH'
 alias prmerged='git pull; git remote prune origin; git checkout wip; git rebase main; git push origin wip --force'
+
+# Mise
+alias mr='mise run'
