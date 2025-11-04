@@ -9,3 +9,13 @@ trusted_config_paths = [
     '~/dev',
 ]
 idiomatic_version_file_enable_tools = ['node', "ruby"]
+
+# Ruby is sometimes a bit tricky to install with mise
+# One issue I had was:
+# following extensions are not compiled: psych: Could not be configured. It will not be installed.
+# Solved with the following:
+# brew reinstall libyaml
+# gem install psych -- --with-libyaml-dir=$(brew --prefix libyaml)
+# sudo gem install psych -- --with-libyaml-dir=$(brew --prefix libyaml)
+# export RUBY_CONFIGURE_OPTS=--with-libyaml-dir=$(brew --prefix libyaml)
+# and then running mise install again installed latest ruby without issues
