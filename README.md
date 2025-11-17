@@ -17,6 +17,10 @@ Ghostty works for both mac and linux as of now and apparently a Windows version 
 
 In case the Windows terminal is used, the font can be adjusted on Settings > Default > Appearance (same for background opacity).
 
+## Git
+
+There are a few git configurations that I find particularly useful, such as skipping cherry-pick advice, configuring pull to rebase and some files to be globally ignored. For those purposes, this repository contains a gitconfig and a gitignore files that can be moved to the home folder. For additional configurations specific to OSs or devices, the gitconfig also tries to include a `.gitconfig-local` file that could be optionally provided by the user.
+
 ## Prompt: Starship
 
 After following the installation guide that's usually just running a script, configure it to use the config file provided by this repository.
