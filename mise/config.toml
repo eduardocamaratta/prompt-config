@@ -1,8 +1,8 @@
 [tools]
 jq = "1.8.1"
-node = "25.1.0"
+node = "25.2.1"
 ruby = "3.4.7"
-gh = "2.83.0" # Github CLI
+gh = "2.83.1"
 
 [settings]
 # All config files on these prefixes will be trusted
