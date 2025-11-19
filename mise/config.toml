@@ -3,6 +3,7 @@ jq = "1.8.1"
 node = "25.2.1"
 ruby = "3.4.7"
 gh = "2.83.1"
+python = '3.14.0'
 
 [settings]
 # All config files on these prefixes will be trusted
