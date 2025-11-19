@@ -120,10 +120,14 @@ if [ -f $HOME/.bash/platform-specific-config ]; then
 fi
 
 # Mise
-eval "$($HOME/.local/bin/mise activate bash)"
+if [ -f $HOME/.local/bin/mise ]; then
+    eval "$($HOME/.local/bin/mise activate bash)"
+fi
 
 # Starship configuration
-eval "$(starship init bash)"
+if command -V starship &>/dev/null; then
+    eval "$(starship init bash)"
+fi
 
 # Default directory
 dev

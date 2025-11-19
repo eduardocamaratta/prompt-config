@@ -15,7 +15,7 @@ autoload -Uz compinit && compinit
 # Visual Studio Code
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-# Starship Configuration for Zsh
+# Starship Configuration for ZSH
 if command -V starship &>/dev/null; then
     eval "$(starship init zsh)"
 fi
@@ -43,5 +43,5 @@ fi
 
 # This used to be the rbenv initialization section, but now ruby versions are being managed by Mise
 
-# Default folder
+# Default directory
 dev
