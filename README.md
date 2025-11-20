@@ -9,7 +9,29 @@ Originally this repository was a guide on how to install and use Starship inspir
 
 ## Font
 
-The setup described on this repository assumes [FiraCode](https://github.com/tonsky/FiraCode) is installed on the system, specially the Mono variant. I recommend obtaining it from [NerdFonts](https://www.nerdfonts.com/font-downloads) which provides several developer fonts already patched with a large [catalog](https://www.nerdfonts.com/cheat-sheet) of icons and symbols. Alternatively, at least a font with ligatures and patched with extra symbols is required. On Linux I installed with Font Manager, on Mac with FontBook and on Windows just by double clicking it.
+The setup described on this repository assumes [FiraCode](https://github.com/tonsky/FiraCode) is installed on the system, specially the Mono variant. I recommend obtaining it from [NerdFonts](https://www.nerdfonts.com/font-downloads) that provides several developer fonts already patched with a large [catalog](https://www.nerdfonts.com/cheat-sheet) of icons and symbols. Alternatively, at least a font with ligatures and patched with extra symbols is required. On Linux I installed with Font Manager, on Mac with FontBook and on Windows just by double clicking it.
+
+### Configuring the font for VSCode
+
+I recommend just syncing your settings. In case of first installation, add the following to the settings json:
+
+Linux and Mac:
+```javascript
+"editor.fontFamily": "'FiraCode Nerd Font'",
+"chat.editor.fontFamily": "'FiraCode Nerd Font'",
+"terminal.integrated.fontFamily": "'FiraCode Nerd Font'",
+"editor.fontLigatures": true,
+"terminal.integrated.fontLigatures.enabled": true
+```
+
+On Windows, make sure to use the correct font name. Open font settings and locate the font. For this case it's "FiraCode NFM" (for Monospace):
+```javascript
+"editor.fontFamily": "'FiraCode NF'",
+"chat.editor.fontFamily": "'FiraCode NF'",
+"terminal.integrated.fontFamily": "'FiraCode NFM'"
+"editor.fontLigatures": true,
+"terminal.integrated.fontLigatures.enabled": true
+```
 
 ## Terminal Emulator: Ghostty
 
@@ -34,16 +56,6 @@ I highly recommend having mise installed. It's a lightweight prompt injection th
 ## Shell
 
 If you are using either Zsh on Mac or Bash on WSL/Linux, you can directly use the RC files from this repository.
-
-## Configuring VSCode
-
-I recommend just syncing your settings. In case of first installation, here goes a tip on how to configure the font:
-
-1. Open Windows settings and check for the actual font name. In this case, it's "FiraCode NFM" (for Monospace).
-2. Configure VSCode as follows:
-    * `"editor.fontFamily": "'FiraCode NF'"`
-    * `"terminal.integrated.fontFamily": "'FiraCode NFM'"`
-    * `"editor.fontLigatures": true`
 
 ## Installation Script
 
