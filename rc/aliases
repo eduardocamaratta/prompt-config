@@ -4,8 +4,8 @@
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -lah'
-# Only where Ghostty is used (not Windows)
-if ! uname -a | grep -i microsoft > /dev/null 2>&1; then
+# Only where Ghostty is used (neither Windows nor AWS Workspace)
+if ! uname -a | grep -Ei "(microsoft|aws)" > /dev/null 2>&1; then
     alias c='printf "\e[H\e[22J"' # Clears screen but not scrollback
     alias clear=c
 else
