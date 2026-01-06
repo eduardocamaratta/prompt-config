@@ -1,5 +1,10 @@
 # For non-interactive shells
 
+# Platform-specific/private configuration
+if [ -f $HOME/.zsh/platform-specific-profile ]; then
+    source $HOME/.zsh/platform-specific-profile;
+fi
+
 # Mise shims directory
 if [ -d "$HOME/.local/share/mise/shims" ]; then
     export PATH="$HOME/.local/share/mise/shims:$PATH";
