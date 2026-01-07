@@ -42,6 +42,3 @@ if [ -f $HOME/.zsh/platform-specific-config ]; then
 fi
 
 # This used to be the rbenv initialization section, but now ruby versions are being managed by Mise
-
-# Default directory
-dev

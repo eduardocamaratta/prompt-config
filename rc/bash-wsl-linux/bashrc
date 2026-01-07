@@ -128,6 +128,3 @@ fi
 if command -V starship &>/dev/null; then
     eval "$(starship init bash)"
 fi
-
-# Default directory
-dev
