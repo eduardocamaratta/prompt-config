@@ -25,6 +25,9 @@ if [ "${usage_uninstall:-false}" = "true" ]; then
 fi
 '''
 
+[shell_alias]
+unused-mise-tools = "mise unused-tools"
+
 # Ruby is sometimes a bit tricky to install with mise
 
 # The issue I had on macOS:
