@@ -20,12 +20,6 @@ if command -V starship &>/dev/null; then
     eval "$(starship init zsh)"
 fi
 
-# Homebrew
-# Removed a line that was adding the same eval to .zprofile each time this was executed
-if [ -f /opt/homebrew/bin/brew ]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)";
-fi
-
 # Mint
 if [ -d $HOME/.mint/bin ]; then
     export PATH="$PATH:$HOME/.mint/bin";
@@ -41,4 +35,4 @@ if [ -f $HOME/.zsh/platform-specific-config ]; then
     source $HOME/.zsh/platform-specific-config;
 fi
 
-# This used to be the rbenv initialization section, but now ruby versions are being managed by Mise
+# Ruby versions are ideally managed by Mise
