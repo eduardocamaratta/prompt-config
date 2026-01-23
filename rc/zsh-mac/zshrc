@@ -1,23 +1,26 @@
 # Prevent commands started with a space from being saved to history, ignore contiguous duplicates and certain commands
-setopt HIST_IGNORE_SPACE
-setopt HIST_IGNORE_DUPS
-export HISTORY_IGNORE="c|l|s|ls"
+setopt HIST_IGNORE_SPACE;
+setopt HIST_IGNORE_DUPS;
+export HISTORY_IGNORE="c|l|s|ls";
+
+# Use an empty string instead of % for the EOL mark
+export PROMPT_EOL_MARK='';
 
 # Aliases
 if [ -f $HOME/.zsh_aliases ]; then
-    source $HOME/.zsh_aliases
+    source $HOME/.zsh_aliases;
 fi
 
 # Git completion
 # ZSH does git completion out of the box, but it needs to be enabled
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit;
 
 # Visual Studio Code
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin";
 
 # Starship Configuration for ZSH
 if command -V starship &>/dev/null; then
-    eval "$(starship init zsh)"
+    eval "$(starship init zsh)";
 fi
 
 # Mint
