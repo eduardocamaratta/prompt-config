@@ -107,13 +107,18 @@ echo "ln -s $STARSHIP_CONFIG_LOCATION $STARSHIP_TARGET_CONFIG_LOCATION;";
 
 # Mise #########################################################################
 
-MISE_CONFIG_LOCATION="$PWD/mise/config.toml";
-MISE_TARGET_CONFIG_PATH="$HOME/.config/mise";
-MISE_TARGET_CONFIG_LOCATION="$MISE_TARGET_CONFIG_PATH/config.toml";
+MISE_CONFIG_LOCATION=$PWD/mise/config.toml;
+MISE_TASKS_LOCATION=$PWD/mise/tasks;
+MISE_TARGET_CONFIG_PATH=$HOME/.config/mise;
+MISE_TARGET_CONFIG_LOCATION=$MISE_TARGET_CONFIG_PATH/config.toml;
+MISE_TARGET_TASKS_PATH=$MISE_TARGET_CONFIG_PATH/mise-tasks;
 
 echo -e "\necho \"# Mise config\"";
-echo "rm -f $MISE_TARGET_CONFIG_LOCATION;";
 echo "mkdir -p $MISE_TARGET_CONFIG_PATH;";
-echo "ln -s $MISE_CONFIG_LOCATION $MISE_TARGET_CONFIG_LOCATION;";
+echo "ln -fs $MISE_CONFIG_LOCATION $MISE_TARGET_CONFIG_LOCATION;";
+
+echo -e "\necho \"# Mise tasks\"";
+echo "mkdir -p $MISE_TARGET_TASKS_PATH";
+ls $MISE_TASKS_LOCATION | xargs -I%TASK% echo "ln -fs $MISE_TASKS_LOCATION/%TASK% $MISE_TARGET_TASKS_PATH/.;";
 
 echo "--------------------- End installation script ------------------------------------------------------";

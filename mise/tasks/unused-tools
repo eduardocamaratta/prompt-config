@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#MISE description="Lists and optionally uninstall unused mise tools"
+#USAGE flag "-u --uninstall" help="If present uninstall unused tools instead of just listing them"
+
+mise ls --prunable;
+if [ "${usage_uninstall:-false}" = "true" ]; then
+    TOOLS_TO_UNINSTALL=$(mise ls --prunable --json | jq -r 'to_entries[] | .key + "@" + .value[].version');
+    if [[ $TOOLS_TO_UNINSTALL != "" ]]; then
+        mise uninstall $TOOLS_TO_UNINSTALL;
+    else
+        echo "No tools to uninstall";
+    fi
+fi
