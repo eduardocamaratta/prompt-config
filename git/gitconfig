@@ -4,5 +4,6 @@
 	rebase = true
 [core]
 	excludesFile = ~/.gitignore-global
+	editor = code --wait
 [include]
 	path = ~/.gitconfig-local
