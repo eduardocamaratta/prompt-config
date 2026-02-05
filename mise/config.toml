@@ -12,8 +12,14 @@ trusted_config_paths = [
 ]
 idiomatic_version_file_enable_tools = ["node", "ruby"]
 
+[tasks.ghostty-config]
+description = "Show default ghostty config"
+run = "ghostty +show-config --default --docs"
+
 [shell_alias]
 unused-mise-tools = "mise unused-tools"
+update-packages = "mise update-packages"
+ghostty-config = "mise ghostty-config"
 
 # Ruby is sometimes a bit tricky to install with mise
 

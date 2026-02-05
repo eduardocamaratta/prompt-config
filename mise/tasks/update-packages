@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#MISE description="Update packages installed with apt or brew (depending on the OS)"
+
+if [[ "$(uname -s)" == "Linux" ]]; then # uname -s = kernel name
+    sudo apt update;
+    sudo apt upgrade;
+    sudo apt autoremove;
+    sudo apt autoclean;
+else
+    brew update && brew upgrade;
+fi
