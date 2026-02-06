@@ -14,7 +14,7 @@ idiomatic_version_file_enable_tools = ["node", "ruby"]
 
 [tasks.ghostty-config]
 description = "Show default ghostty config"
-run = "ghostty +show-config --default --docs"
+run = "if command -v ghostty; then ghostty +show-config --default --docs; else echo 'Ghostty is unvailable'; fi"
 
 [shell_alias]
 unused-mise-tools = "mise unused-tools"
