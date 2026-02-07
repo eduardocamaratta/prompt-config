@@ -33,7 +33,7 @@ fi
 
 GHOSTTY_CONFIG_LOCATION=$PWD/ghostty/config;
 
-if uname -a | grep -i microsoft > /dev/null 2>&1; then
+if uname -r | grep -i microsoft > /dev/null 2>&1; then
     echo -e "\n⚠️ Ghostty isn't available on Windows";
 elif uname -a | grep -i darwin > /dev/null 2>&1; then
     echo -e "\necho \"# Ghostty configs for MacOS\"";
@@ -41,6 +41,17 @@ elif uname -a | grep -i darwin > /dev/null 2>&1; then
 else
     echo -e "\necho \"# Ghostty configs for Linux\"";
     echo "ln -fs $GHOSTTY_CONFIG_LOCATION $HOME/.config/ghostty/config;";
+fi
+
+# Wezterm ######################################################################
+
+WEZTERM_CONFIG_LOCATION=$PWD/wezterm/wezterm.lua;
+
+if uname -r | grep -i microsoft > /dev/null 2>&1; then
+    echo -e "\necho \"# Wezterm configs for Windows. ⚠️ For Windows the file is copied instead of symlinked\"";
+    WINDOWS_USER_PATH=$(ls -d /mnt/c/Users/*/ | grep -Ev "(Default|Public|All\ Users)" | head -n1 | sed 's/.$//')
+    echo "cp $WEZTERM_CONFIG_LOCATION $WINDOWS_USER_PATH/.wezterm.lua;";
+# TODO: implement it for native linux and mac
 fi
 
 # RC ###########################################################################
