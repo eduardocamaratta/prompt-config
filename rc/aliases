@@ -1,16 +1,15 @@
 # For bash this file is expected at ~/.bash_aliases and for zsh at ~/.zsh_aliases
 
-# Shell commands
+# Ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -lah'
 
 # Apply workaround for clear command if ghostty is installed
-if command -V ghostty &>/dev/null; then
+if command -v ghostty &>/dev/null; then
     alias c='printf "\e[H\e[22J"' # Clears screen but not scrollback
-    alias clear=c
 else
-    alias c='clear'
+    alias c='clear -x'
 fi
 
 # CD that also works with a number argument, that makes it go N directories up in the hierarchy
@@ -44,6 +43,3 @@ elif uname -a | grep -i darwin > /dev/null 2>&1; then
     alias brave='/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser'
 # TODO: alias for linux
 fi
-
-# Mise
-alias mr='mise run'
