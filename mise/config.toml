@@ -17,9 +17,10 @@ description = "Show default ghostty config"
 run = "if command -v ghostty; then ghostty +show-config --default --docs; else echo 'Ghostty is unvailable'; fi"
 
 [shell_alias]
-unused-mise-tools = "mise unused-tools"
-update-packages = "mise update-packages"
 ghostty-config = "mise ghostty-config"
+unused-mise-tools = "mise unused-tools"
+update-npm = "mise update-npm-packages"
+update-packages = "mise update-packages"
 
 # Ruby is sometimes a bit tricky to install with mise
 

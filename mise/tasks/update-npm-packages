@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+import { exec } from 'child_process'
+
+exec('npm outdated --json', (_error, stdout, _stderr) => {
+    for (let key in JSON.parse(stdout)) {
+        exec(`npm install ${key}@latest`)
+    }
+})
+
+exec('npm audit fix')
+
+console.log('NPM packages updated and audited. Remember to commit the changes')
