@@ -104,7 +104,8 @@ fi
 # Git completion
 # Check git version with: git version
 # Select correspondent tag on https://github.com/git/git
-# Copy git-completion.bash from contrib/completion, execute it on your bashrc
+# Example: https://github.com/git/git/tree/v2.50.1/contrib/completion
+# Copy git-completion.bash and execute it on your bashrc
 if [ -f $HOME/git-completion.bash ]; then
     . $HOME/git-completion.bash
 fi
