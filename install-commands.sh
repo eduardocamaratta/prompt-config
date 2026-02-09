@@ -33,7 +33,7 @@ fi
 
 GHOSTTY_CONFIG_LOCATION=$PWD/ghostty/config;
 
-if uname -a | grep -i microsoft > /dev/null 2>&1; then
+if uname -r | grep -i microsoft > /dev/null 2>&1; then
     echo -e "\n⚠️ Ghostty isn't available on Windows";
 elif uname -a | grep -i darwin > /dev/null 2>&1; then
     echo -e "\necho \"# Ghostty configs for MacOS\"";
