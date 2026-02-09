@@ -90,11 +90,6 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# Alias definitions
-if [ -f $HOME/.bash_aliases ]; then
-    . $HOME/.bash_aliases
-fi
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -112,6 +107,11 @@ fi
 # Copy git-completion.bash from contrib/completion, execute it on your bashrc
 if [ -f $HOME/git-completion.bash ]; then
     . $HOME/git-completion.bash
+fi
+
+# Alias definitions
+if [ -f $HOME/.bash_aliases ]; then
+    . $HOME/.bash_aliases
 fi
 
 # Platform-specific/private configuration

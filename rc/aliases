@@ -30,6 +30,13 @@ alias gp='run_git_command_if_git_repo pull'
 alias grpo='run_git_command_if_git_repo remote prune origin'
 alias s='run_git_command_if_git_repo status'
 
+if command -v __git_complete &>/dev/null; then
+    __git_complete gd git_diff
+    __git_complete gb git_branch
+    __git_complete gc git_checkout
+    __git_complete gp git_pull
+fi
+
 # Folders
 alias dev='cd $HOME/dev'
 alias downloads='cd $HOME/Downloads'
