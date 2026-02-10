@@ -91,6 +91,6 @@ MISE_TARGET_TASKS_PATH=$MISE_TARGET_CONFIG_PATH/mise-tasks;
 
 echo -e "\necho \"# Mise tasks\"";
 echo "mkdir -p $MISE_TARGET_TASKS_PATH";
-ls $MISE_TASKS_LOCATION | xargs -I%TASK% echo "ln -fs $MISE_TASKS_LOCATION/%TASK% $MISE_TARGET_TASKS_PATH/.;";
+echo "ln -fs $MISE_TASKS_LOCATION/* $MISE_TARGET_TASKS_PATH;";
 
 echo "--------------------- End installation script ------------------------------------------------------";
