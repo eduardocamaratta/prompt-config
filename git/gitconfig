@@ -1,5 +1,6 @@
 [advice]
 	skippedCherryPicks = false
+	detachedHead = false
 [pull]
 	rebase = true
 [core]
