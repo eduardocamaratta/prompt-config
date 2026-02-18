@@ -87,7 +87,7 @@ echo "mkdir -p $MISE_TARGET_CONFIG_PATH;";
 echo "ln -fs $PWD/mise/config.toml $MISE_TARGET_CONFIG_PATH/.;";
 
 MISE_TASKS_LOCATION=$PWD/mise/tasks;
-MISE_TARGET_TASKS_PATH=$MISE_TARGET_CONFIG_PATH/mise-tasks;
+MISE_TARGET_TASKS_PATH=$MISE_TARGET_CONFIG_PATH/tasks;
 
 echo -e "\necho \"# Mise tasks\"";
 echo "mkdir -p $MISE_TARGET_TASKS_PATH";
