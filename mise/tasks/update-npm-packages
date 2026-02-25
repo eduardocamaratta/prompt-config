@@ -1,10 +1,16 @@
 #!/usr/bin/env node
 
 import { exec } from 'child_process'
+import { chdir, cwd } from 'process'
 
-exec('npm outdated --json', (_error, stdout, _stderr) => {
-    for (let key in JSON.parse(stdout)) {
-        exec(`npm install ${key}@latest`)
+chdir(process.env.MISE_ORIGINAL_CWD)
+console.log(`Running in ${cwd()}`)
+exec('npm outdated --json;', (_error, stdout, _stderr) => {
+    const parsedJSON = JSON.parse(stdout)
+    for (let key in parsedJSON) {
+        const latestVersion = parsedJSON[key]['latest']
+        console.log(`Installing ${key}@${latestVersion}`)
+        exec(`npm install ${key}@${latestVersion}`)
     }
 })
 
