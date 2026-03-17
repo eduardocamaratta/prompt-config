@@ -12,6 +12,9 @@ trusted_config_paths = [
 ]
 idiomatic_version_file_enable_tools = ["node", "ruby"]
 
+[settings.ruby]
+compile = false
+
 [tasks.ghostty-config]
 description = "Show default ghostty config"
 run = "if command -v ghostty; then ghostty +show-config --default --docs; else echo 'Ghostty is unvailable'; fi"
