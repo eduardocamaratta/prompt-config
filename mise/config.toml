@@ -2,7 +2,7 @@
 gh     = "2.89.0"
 jq     = "1.8.1"
 node   = "25.9.0"
-python = "3.14.3"
+python = "3.14.4"
 ruby   = "4.0.2"
 
 [settings]
