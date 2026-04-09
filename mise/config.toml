@@ -1,15 +1,13 @@
 [tools]
-jq = "1.8.1"
-node = "25.9.0"
-ruby = "4.0.2"
-gh = "2.89.0"
+gh     = "2.89.0"
+jq     = "1.8.1"
+node   = "25.9.0"
 python = "3.14.3"
+ruby   = "4.0.2"
 
 [settings]
 # All config files on these prefixes will be trusted
-trusted_config_paths = [
-    '~/dev',
-]
+trusted_config_paths                = ['~/dev']
 idiomatic_version_file_enable_tools = ["node", "ruby"]
 
 [settings.ruby]
@@ -17,13 +15,13 @@ compile = false
 
 [tasks.ghostty-config]
 description = "Show default ghostty config"
-run = "if command -v ghostty; then ghostty +show-config --default --docs; else echo 'Ghostty is unvailable'; fi"
+run         = "if command -v ghostty; then ghostty +show-config --default --docs; else echo 'Ghostty is unvailable'; fi"
 
 [shell_alias]
-ghostty-config = "mise ghostty-config"
+ghostty-config    = "mise ghostty-config"
 unused-mise-tools = "mise unused-tools"
-update-npm = "mise update-npm-packages"
-update-packages = "mise update-packages"
+update-npm        = "mise update-npm-packages"
+update-packages   = "mise update-packages"
 
 # Ruby is sometimes a bit tricky to install with mise
 
