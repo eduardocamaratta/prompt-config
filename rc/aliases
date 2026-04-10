@@ -53,5 +53,6 @@ if uname -a | grep -i microsoft > /dev/null 2>&1; then
     alias brave='/mnt/c/Program\ Files/BraveSoftware/Brave-Browser/Application/brave.exe'
 elif uname -a | grep -i darwin > /dev/null 2>&1; then
     alias brave='/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser'
+    alias edge='/Applications/Microsoft\ Edge.app/Contents/MacOS/Microsoft\ Edge'
 # TODO: alias for linux
 fi
