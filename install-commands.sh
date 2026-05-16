@@ -25,11 +25,7 @@ GITIGNORE_GLOBAL_TARGET_LOCATION=$GIT_CONFIGS_TARGET_LOCATION/ignore-global;
 echo -e "echo \"# Git\"";
 echo "ln -fs $GITCONFIG_BASE_LOCATION/gitconfig $HOME/.gitconfig;";
 echo "mkdir -p $GIT_CONFIGS_TARGET_LOCATION;";
-if uname -a | grep -i darwin > /dev/null 2>&1; then
-    echo "ln -fs $GITCONFIG_BASE_LOCATION/gitignore-global-mac $GITIGNORE_GLOBAL_TARGET_LOCATION;";
-else
-    echo "ln -fs $GITCONFIG_BASE_LOCATION/gitignore-global-linux $GITIGNORE_GLOBAL_TARGET_LOCATION;";
-fi
+echo "ln -fs $GITCONFIG_BASE_LOCATION/ignore-global $GITIGNORE_GLOBAL_TARGET_LOCATION;";
 
 # Ghostty ######################################################################
 
