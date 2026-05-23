@@ -14,20 +14,54 @@
 # Switch to the directory where this script is located because of all relative paths it uses
 cd "$(dirname $0)" >/dev/null 2>&1;
 
+# Check shell ######################################################################################
+
+SUPPORTED_SHELLS=("zsh" "bash");
+CURRENT_SHELL=$(basename $SHELL);
+if [[ "${SUPPORTED_SHELLS[*]}" =~ "$CURRENT_SHELL" ]]; then
+    echo "Supported shell: $CURRENT_SHELL.";
+else
+    echo -e "\033[0;31mError\033[0m: unsupported shell $CURRENT_SHELL.";
+    echo -e "Expected one of the following: ${SUPPORTED_SHELLS[*]}";
+    exit 1;
+fi
+
 echo "--------------------- Start installation script ----------------------------------------------------";
 
-# Git ##########################################################################
+# RC ###############################################################################################
+
+TARGET_EXTRA_CONFIG_LOCATION=$HOME/.$CURRENT_SHELL;
+echo "mkdir -p $TARGET_EXTRA_CONFIG_LOCATION;";
+
+LOCAL_BASE_RC_LOCATION=$PWD/rc;
+case $CURRENT_SHELL in
+    bash)
+        echo -e "echo \"# Bash configs for Linux and WSL\";";
+        LOCAL_RC_LOCATION=$LOCAL_BASE_RC_LOCATION/bash-wsl-linux;
+        echo "ln -fs $LOCAL_RC_LOCATION/bashrc $HOME/.bashrc;";
+        echo "ln -fs $LOCAL_RC_LOCATION/git-completion.bash $TARGET_EXTRA_CONFIG_LOCATION/.;";
+        ;;
+    zsh)
+        echo -e "echo \"# Zsh configs for MacOS\";";
+        LOCAL_RC_LOCATION=$LOCAL_BASE_RC_LOCATION/zsh-mac;
+        echo "ln -fs $LOCAL_RC_LOCATION/zshrc $HOME/.zshrc;";
+        echo "ln -fs $LOCAL_RC_LOCATION/zprofile $HOME/.zprofile;";
+        ;;
+esac;
+echo "ln -fs $LOCAL_BASE_RC_LOCATION/aliases $TARGET_EXTRA_CONFIG_LOCATION/.;";
+
+# Git ##############################################################################################
 
 GITCONFIG_BASE_LOCATION=$PWD/git;
 GIT_CONFIGS_TARGET_LOCATION=$HOME/.git;
 GITIGNORE_GLOBAL_TARGET_LOCATION=$GIT_CONFIGS_TARGET_LOCATION/ignore-global;
 
-echo -e "echo \"# Git\"";
+echo -e "\necho \"# Git\"";
 echo "ln -fs $GITCONFIG_BASE_LOCATION/gitconfig $HOME/.gitconfig;";
 echo "mkdir -p $GIT_CONFIGS_TARGET_LOCATION;";
 echo "ln -fs $GITCONFIG_BASE_LOCATION/ignore-global $GITIGNORE_GLOBAL_TARGET_LOCATION;";
 
-# Ghostty ######################################################################
+# Ghostty ##########################################################################################
 
 GHOSTTY_CONFIG_LOCATION=$PWD/ghostty/config;
 
@@ -41,34 +75,7 @@ else
     echo "ln -fs $GHOSTTY_CONFIG_LOCATION $HOME/.config/ghostty/config;";
 fi
 
-# RC ###########################################################################
-
-# Base locations
-RC_BASE_CONFIG_LOCATION=$PWD/rc;
-RC_ALIASES_CONFIG_LOCATION=$RC_BASE_CONFIG_LOCATION/aliases;
-
-# Base MacOS Locations
-RC_BASE_MAC_CONFIG_LOCATION=$RC_BASE_CONFIG_LOCATION/zsh-mac;
-
-# Base Linux Locations
-RC_BASE_LINUX_CONFIG_LOCATION=$RC_BASE_CONFIG_LOCATION/bash-wsl-linux;
-
-# Linux Target Locations
-BASHRC_LINUX_CONFIG_LOCATION=$HOME/.bashrc;
-
-if uname -a | grep -i darwin > /dev/null 2>&1; then
-    echo -e "\necho \"# ZSH configs for MacOS\"";
-    echo "ln -fs $RC_BASE_MAC_CONFIG_LOCATION/zshrc $HOME/.zshrc;";
-    echo "ln -fs $RC_BASE_MAC_CONFIG_LOCATION/zprofile $HOME/.zprofile;";
-    echo "ln -fs $RC_ALIASES_CONFIG_LOCATION $HOME/.zsh_aliases;";
-else
-    echo -e "\necho \"# Bash configs for Linux and WSL\"";
-    echo "ln -fs $RC_BASE_LINUX_CONFIG_LOCATION/bashrc $HOME/.bashrc;";
-    echo "ln -fs $RC_BASE_LINUX_CONFIG_LOCATION/git-completion.bash $HOME/.;";
-    echo "ln -fs $RC_ALIASES_CONFIG_LOCATION $HOME/.bash_aliases;";
-fi
-
-# Starship #####################################################################
+# Starship #########################################################################################
 
 STARSHIP_TARGET_PATH=$HOME/.config
 
@@ -76,7 +83,7 @@ echo -e "\necho \"# Starship config\"";
 echo "mkdir -p $STARSHIP_TARGET_PATH;";
 echo "ln -fs $PWD/starship/starship.toml $STARSHIP_TARGET_PATH/.;";
 
-# Mise #########################################################################
+# Mise #############################################################################################
 
 MISE_TARGET_CONFIG_PATH=$HOME/.config/mise;
 

@@ -106,13 +106,13 @@ fi
 # Select correspondent tag on https://github.com/git/git
 # Example: https://github.com/git/git/tree/v2.50.1/contrib/completion
 # Copy git-completion.bash and execute it on your bashrc
-if [ -f $HOME/git-completion.bash ]; then
-    . $HOME/git-completion.bash
+if [ -f $HOME/.bash/git-completion.bash ]; then
+    . $HOME/.bash/git-completion.bash
 fi
 
-# Alias definitions
-if [ -f $HOME/.bash_aliases ]; then
-    . $HOME/.bash_aliases
+# Aliases definitions
+if [ -f $HOME/.bash/aliases ]; then
+    . $HOME/.bash/aliases
 fi
 
 # Platform-specific/private configuration
