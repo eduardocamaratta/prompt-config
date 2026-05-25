@@ -4,7 +4,7 @@
 [pull]
 	rebase = true
 [core]
-	excludesFile = ~/.git/ignore-global
+	excludesFile = ~/.git/ignore
 	editor = code --wait
 [include]
-	path = ~/.git/config-local
+	path = ~/.git/local
