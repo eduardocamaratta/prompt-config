@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
-################################################################################
-# This script shows the necessary commands to install the current prompt and
-# tools configurations in the user's home directory.
+####################################################################################################
+# This script shows the necessary commands to install the current prompt and tools configurations in
+# the user's home directory.
 #
-# Previous configuration files aren't removed and these ones aren't copied on
-# purpose, to avoid losing data in case something goes wrong.
+# Previous configuration files aren't removed and these ones aren't copied on purpose, to avoid
+# losing data in case something goes wrong.
 #
-# Always double check all commands and make sure the removed files are backed up
-# before applying destructive commands.
-################################################################################
+# Always double check all commands and make sure the removed files are backed up before applying
+# destructive commands.
+####################################################################################################
 
 # Switch to the directory where this script is located because of all relative paths it uses
 cd "$(dirname $0)" >/dev/null 2>&1;
@@ -26,7 +26,7 @@ else
     exit 1;
 fi
 
-echo "--------------------- Start installation script ----------------------------------------------------";
+echo "--------------------------- Start installation script --------------------------";
 
 # RC ###############################################################################################
 
@@ -97,4 +97,4 @@ echo -e "\necho \"# Mise tasks\"";
 echo "mkdir -p $MISE_TARGET_TASKS_PATH";
 echo "ln -fs $MISE_TASKS_LOCATION/* $MISE_TARGET_TASKS_PATH;";
 
-echo "--------------------- End installation script ------------------------------------------------------";
+echo "--------------------------- End installation script ----------------------------";
