@@ -16,7 +16,9 @@ if [ -f $HOME/.zsh_aliases ]; then
 fi
 
 # Visual Studio Code
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin";
+if [ -d /Applications/Visual\ Studio\ Code.app ]; then
+    export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin";
+fi
 
 # Starship Configuration for ZSH
 if command -V starship &>/dev/null; then
