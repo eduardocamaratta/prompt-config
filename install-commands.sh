@@ -54,12 +54,11 @@ echo "ln -fs $LOCAL_BASE_RC_LOCATION/aliases $TARGET_EXTRA_CONFIG_LOCATION/.;";
 
 GITCONFIG_BASE_LOCATION=$PWD/git;
 GIT_CONFIGS_TARGET_LOCATION=$HOME/.git;
-GITIGNORE_GLOBAL_TARGET_LOCATION=$GIT_CONFIGS_TARGET_LOCATION/ignore-global;
 
 echo -e "\necho \"# Git\"";
 echo "ln -fs $GITCONFIG_BASE_LOCATION/gitconfig $HOME/.gitconfig;";
 echo "mkdir -p $GIT_CONFIGS_TARGET_LOCATION;";
-echo "ln -fs $GITCONFIG_BASE_LOCATION/ignore-global $GITIGNORE_GLOBAL_TARGET_LOCATION;";
+echo "ln -fs $GITCONFIG_BASE_LOCATION/ignore $GIT_CONFIGS_TARGET_LOCATION/.;";
 
 # Ghostty ##########################################################################################
 
