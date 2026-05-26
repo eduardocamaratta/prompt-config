@@ -55,7 +55,7 @@ echo "ln -fs $LOCAL_BASE_RC_LOCATION/aliases $TARGET_EXTRA_CONFIG_LOCATION/.;";
 GITCONFIG_BASE_LOCATION=$PWD/git;
 GIT_CONFIGS_TARGET_LOCATION=$HOME/.git;
 
-echo -e "\necho \"# Git\"";
+echo -e "\n\"# Git\"";
 echo "ln -fs $GITCONFIG_BASE_LOCATION/gitconfig $HOME/.gitconfig;";
 echo "mkdir -p $GIT_CONFIGS_TARGET_LOCATION;";
 echo "ln -fs $GITCONFIG_BASE_LOCATION/ignore $GIT_CONFIGS_TARGET_LOCATION/.;";
@@ -67,10 +67,10 @@ GHOSTTY_CONFIG_LOCATION=$PWD/ghostty/config;
 if uname -r | grep -i microsoft > /dev/null 2>&1; then
     echo -e "\n⚠️ Ghostty isn't available on Windows";
 elif uname -a | grep -i darwin > /dev/null 2>&1; then
-    echo -e "\necho \"# Ghostty configs for MacOS\"";
+    echo -e "\n\"# Ghostty configs for MacOS\"";
     echo "ln -fs $GHOSTTY_CONFIG_LOCATION $HOME/Library/Application\ Support/com.mitchellh.ghostty/config;";
 else
-    echo -e "\necho \"# Ghostty configs for Linux\"";
+    echo -e "\n\"# Ghostty configs for Linux\"";
     echo "ln -fs $GHOSTTY_CONFIG_LOCATION $HOME/.config/ghostty/config;";
 fi
 
@@ -78,7 +78,7 @@ fi
 
 STARSHIP_TARGET_PATH=$HOME/.config
 
-echo -e "\necho \"# Starship config\"";
+echo -e "\n\"# Starship config\"";
 echo "mkdir -p $STARSHIP_TARGET_PATH;";
 echo "ln -fs $PWD/starship/starship.toml $STARSHIP_TARGET_PATH/.;";
 
@@ -86,14 +86,14 @@ echo "ln -fs $PWD/starship/starship.toml $STARSHIP_TARGET_PATH/.;";
 
 MISE_TARGET_CONFIG_PATH=$HOME/.config/mise;
 
-echo -e "\necho \"# Mise config\"";
+echo -e "\n\"# Mise config\"";
 echo "mkdir -p $MISE_TARGET_CONFIG_PATH;";
 echo "ln -fs $PWD/mise/config.toml $MISE_TARGET_CONFIG_PATH/.;";
 
 MISE_TASKS_LOCATION=$PWD/mise/tasks;
 MISE_TARGET_TASKS_PATH=$MISE_TARGET_CONFIG_PATH/tasks;
 
-echo -e "\necho \"# Mise tasks\"";
+echo -e "\n\"# Mise tasks\"";
 echo "mkdir -p $MISE_TARGET_TASKS_PATH";
 echo "ln -fs $MISE_TASKS_LOCATION/* $MISE_TARGET_TASKS_PATH;";
 
