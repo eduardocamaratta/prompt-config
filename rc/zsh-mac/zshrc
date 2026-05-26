@@ -11,8 +11,8 @@ export PROMPT_EOL_MARK='';
 autoload -Uz compinit && compinit;
 
 # Aliases
-if [ -f $HOME/.zsh_aliases ]; then
-    source $HOME/.zsh_aliases;
+if [ -f $HOME/.zsh/aliases ]; then
+    source $HOME/.zsh/aliases;
 fi
 
 # Visual Studio Code
