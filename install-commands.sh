@@ -84,13 +84,14 @@ echo "ln -fs $PWD/starship/starship.toml $STARSHIP_TARGET_PATH/.;";
 
 # Mise #############################################################################################
 
+MISE_BASE_LOCATION=$PWD/mise;
 MISE_TARGET_CONFIG_PATH=$HOME/.config/mise;
 
 echo -e "\n##### Mise config ##############################################################";
 echo "mkdir -p $MISE_TARGET_CONFIG_PATH;";
-echo "ln -fs $PWD/mise/config.toml $MISE_TARGET_CONFIG_PATH/.;";
+echo "ln -fs $MISE_BASE_LOCATION/config/config.toml $MISE_TARGET_CONFIG_PATH/.;";
 
-MISE_TASKS_LOCATION=$PWD/mise/tasks;
+MISE_TASKS_LOCATION=$MISE_BASE_LOCATION/tasks;
 MISE_TARGET_TASKS_PATH=$MISE_TARGET_CONFIG_PATH/tasks;
 
 echo -e "\n##### Mise tasks ###############################################################";
