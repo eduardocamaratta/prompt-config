@@ -35,6 +35,12 @@ if [ -f $HOME/.local/bin/mise ]; then
     eval "$($HOME/.local/bin/mise activate zsh)";
 fi
 
+# Gcloud completion
+if command -v gcloud &>/dev/null; then
+    GCLOUD_PATH=$(dirname $(dirname $(which gcloud)));
+    . "$GCLOUD_PATH/completion.zsh.inc";
+fi
+
 # Platform-specific/private configuration
 if [ -f $HOME/.zsh/platform-specific-config ]; then
     source $HOME/.zsh/platform-specific-config;

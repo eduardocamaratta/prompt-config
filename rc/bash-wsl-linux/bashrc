@@ -129,3 +129,9 @@ fi
 if command -V starship &>/dev/null; then
     eval "$(starship init bash)"
 fi
+
+# Gcloud completion
+if command -v gcloud &>/dev/null; then
+    GCLOUD_PATH=$(dirname $(dirname $(which gcloud)));
+    . "$GCLOUD_PATH/completion.bash.inc";
+fi
