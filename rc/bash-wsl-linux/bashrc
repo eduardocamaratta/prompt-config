@@ -132,6 +132,8 @@ fi
 
 # Gcloud completion
 if command -v gcloud &>/dev/null; then
-    GCLOUD_PATH=$(dirname $(dirname $(which gcloud)));
-    . "$GCLOUD_PATH/completion.bash.inc";
+    GCLOUD_COMPLETION_PATH=$(dirname $(dirname $(which gcloud)))/completion.bash.inc;
+    if [ -f $GCLOUD_COMPLETION_PATH ]; then
+        . $GCLOUD_COMPLETION_PATH;
+    fi
 fi
