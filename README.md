@@ -1,5 +1,7 @@
 # Prompt Config
 
+[![License](https://img.shields.io/github/license/eduardocamaratta/prompt-config)](LICENSE)
+
 Documentation and config files for prompt and terminal emulator customization
 
 
