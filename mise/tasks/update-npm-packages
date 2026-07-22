@@ -1,6 +1,18 @@
 #!/usr/bin/env node
 //MISE description="Bump the outdated npm dependencies in the current directory to the their latest versions"
 
+//
+// Copyright © 2026 Eduardo Camaratta
+//
+// This file is part of Prompt Config.
+//
+// Prompt Config is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+//
+// Prompt Config is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License along with Prompt Config. If not, see <https://www.gnu.org/licenses/>.
+//
+
 import { exec } from 'child_process'
 import { chdir, cwd } from 'process'
 
