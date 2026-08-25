@@ -9,6 +9,7 @@ ruby   = "4.0.6"
 # All config files on these prefixes will be trusted
 trusted_config_paths                = ['~/dev']
 idiomatic_version_file_enable_tools = ["node", "ruby"]
+auto_update                         = true
 
 [settings.ruby]
 compile = false
