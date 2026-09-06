@@ -14,6 +14,9 @@ auto_update                         = true
 [settings.ruby]
 compile = false
 
+[settings.github]
+credential_command = 'gh auth token --hostname "$MISE_CREDENTIAL_HOST"'
+
 [tasks.ghostty-config]
 description = "Show default ghostty config"
 run         = "if command -v ghostty; then ghostty +show-config --default --docs; else echo 'Ghostty is unvailable'; fi"
