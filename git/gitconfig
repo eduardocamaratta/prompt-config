@@ -8,3 +8,5 @@
 	editor = code --wait
 [include]
 	path = ~/.git/local
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
