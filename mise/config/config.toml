@@ -11,6 +11,8 @@ ruby   = "4.0.9"
 trusted_config_paths                = ['~/dev']
 idiomatic_version_file_enable_tools = ["node", "ruby"]
 auto_update                         = true
+# To enable env secrets with age values
+experimental                        = true
 
 [settings.ruby]
 compile = false
