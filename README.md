@@ -66,3 +66,24 @@ To display all the necessary commands to configure **Ghostty**, RC files, **Star
 2. Create symlinks to the files on this repository on the proper locations on your system
 
 ⚠️ Before actually executing any command shown by the script, make sure to back up files that will be removed.
+
+## Adding encrypted environment vars to mise using age values
+
+* Add a tools section to some mise config file and add `age`.
+* In the settings section, enable experimental features with `experimental = true`.
+* Make sure to generate a private age key with `age-keygen -o key.txt` and keep it secure.
+* Copy the contents of the desired secret and encrypt it using the following command:
+  ```shell
+  pbpaste | mise set --age-encrypt --stdin \
+  --age-recipient age1... \
+  --age-ssh-recipient ~/.ssh/id_ed25519.pub \
+  <ENVIRONMENT_SECRET_NAME>
+  ```
+  - Keep in mind that here you can specify as many public keys as needed. The example uses the public key for the private age key generated in the previous step and the path to a SSH public key. Mise will try to find age keys in some defaults places as it can be checked in the [documentation](https://mise.jdx.dev/environments/secrets/age.html#decryption-identities).
+  - `--prompt` can be used instead of `--stdin` and then you type the secret value interactively.
+  - Adding more age recipients (or removing) means executing the whole command again with all the desired recipients. In other words the secret always has to be re-encrypted from scratch.
+* Check the encrypted results in the appropriate toml file and the contents of the decrypted environment variable in your shell.
+  - Or, if you don't want to actually show the contents of the encrypted variable, try the following:
+    ```shell
+    mise exec -- sh -c 'test -n "$<ENVIRONMENT_SECRET_NAME>" && echo "<ENVIRONMENT_SECRET_NAME> is available"'
+    ```
