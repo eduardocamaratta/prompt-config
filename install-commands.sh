@@ -42,21 +42,19 @@ echo "--------------------------- Start installation script --------------------
 
 # RC ###############################################################################################
 
-TARGET_EXTRA_CONFIG_LOCATION=$HOME/.$CURRENT_SHELL;
+TARGET_EXTRA_CONFIG_LOCATION=$HOME/.config/camaratta-dotfiles/shell;
 echo "mkdir -p $TARGET_EXTRA_CONFIG_LOCATION;";
 
-LOCAL_BASE_RC_LOCATION=$PWD/rc;
+LOCAL_BASE_RC_LOCATION=$PWD/shell;
 case $CURRENT_SHELL in
     bash)
-        echo -e "\n##### Bash configs for Linux and WSL ###########################################";
-        LOCAL_RC_LOCATION=$LOCAL_BASE_RC_LOCATION/bash-wsl-linux;
-        echo "ln -fs $LOCAL_RC_LOCATION/bashrc $HOME/.bashrc;";
+        echo -e "\n##### Bash configs for Linux ###################################################";
+        echo "ln -fs $LOCAL_BASE_RC_LOCATION/bashrc $HOME/.bashrc;";
         curl -fs "https://raw.githubusercontent.com/git/git/refs/tags/v$(git version | grep -Eo '\d+\.\d+\.\d+')/contrib/completion/git-completion.bash" -o $TARGET_EXTRA_CONFIG_LOCATION/git-completion.bash
     zsh)
         echo -e "\n##### Zsh configs for MacOS ####################################################";
-        LOCAL_RC_LOCATION=$LOCAL_BASE_RC_LOCATION/zsh-mac;
-        echo "ln -fs $LOCAL_RC_LOCATION/zshrc $HOME/.zshrc;";
-        echo "ln -fs $LOCAL_RC_LOCATION/zprofile $HOME/.zprofile;";
+        echo "ln -fs $LOCAL_BASE_RC_LOCATION/zshrc $HOME/.zshrc;";
+        echo "ln -fs $LOCAL_BASE_RC_LOCATION/zprofile $HOME/.zprofile;";
         ;;
 esac;
 echo "ln -fs $LOCAL_BASE_RC_LOCATION/aliases $TARGET_EXTRA_CONFIG_LOCATION/.;";
