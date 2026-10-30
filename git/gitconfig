@@ -4,9 +4,10 @@
 [pull]
 	rebase = true
 [core]
-	excludesFile = ~/.git/ignore
+	excludesFile = ~/.config/camaratta-dotfiles/git/ignore
 	editor = code --wait
+# Custom local config
 [include]
-	path = ~/.git/local
+	path = ~/.config/camaratta-dotfiles/git/local
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
