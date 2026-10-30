@@ -65,7 +65,7 @@ echo "ln -fs $LOCAL_BASE_RC_LOCATION/aliases $TARGET_EXTRA_CONFIG_LOCATION/.;";
 # Git ##############################################################################################
 
 GITCONFIG_BASE_LOCATION=$PWD/git;
-GIT_CONFIGS_TARGET_LOCATION=$HOME/.git;
+GIT_CONFIGS_TARGET_LOCATION=$HOME/.config/camaratta-dotfiles/git;
 
 echo -e "\n##### Git configs ##############################################################";
 echo "ln -fs $GITCONFIG_BASE_LOCATION/gitconfig $HOME/.gitconfig;";
