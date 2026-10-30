@@ -106,18 +106,18 @@ fi
 # Select correspondent tag on https://github.com/git/git
 # Example: https://github.com/git/git/tree/v2.50.1/contrib/completion
 # Copy git-completion.bash and execute it on your bashrc
-if [ -f $HOME/.bash/git-completion.bash ]; then
-    . $HOME/.bash/git-completion.bash
+if [ -f $HOME/.config/camaratta-dotfiles/shell/git-completion.bash ]; then
+    . $HOME/.config/camaratta-dotfiles/shell/git-completion.bash
 fi
 
 # Aliases definitions
-if [ -f $HOME/.bash/aliases ]; then
-    . $HOME/.bash/aliases
+if [ -f $HOME/.config/camaratta-dotfiles/shell/aliases ]; then
+    . $HOME/.config/camaratta-dotfiles/shell/aliases
 fi
 
-# Platform-specific/private configuration
-if [ -f $HOME/.bash/platform-specific-config ]; then
-    . $HOME/.bash/platform-specific-config
+# Custom local config
+if [ -f $HOME/.config/camaratta-dotfiles/shell/config ]; then
+    . $HOME/.config/camaratta-dotfiles/shell/config
 fi
 
 # Mise

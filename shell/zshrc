@@ -11,8 +11,8 @@ export PROMPT_EOL_MARK='';
 autoload -Uz compinit && compinit;
 
 # Aliases
-if [ -f $HOME/.zsh/aliases ]; then
-    source $HOME/.zsh/aliases;
+if [ -f $HOME/.config/camaratta-dotfiles/shell/aliases ]; then
+    source $HOME/.config/camaratta-dotfiles/shell/aliases;
 fi
 
 # Visual Studio Code
@@ -44,8 +44,8 @@ if command -v gcloud &>/dev/null; then
 fi
 
 # Platform-specific/private configuration
-if [ -f $HOME/.zsh/platform-specific-config ]; then
-    source $HOME/.zsh/platform-specific-config;
+if [ -f $HOME/.config/camaratta-dotfiles/shell/config ]; then
+    source $HOME/.config/camaratta-dotfiles/shell/config;
 fi
 
 # Ruby versions are ideally managed by Mise
