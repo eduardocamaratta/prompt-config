@@ -71,12 +71,15 @@ echo "ln -fs $GITCONFIG_BASE_LOCATION/ignore $GIT_CONFIGS_TARGET_LOCATION/.;";
 
 # Ghostty ##########################################################################################
 
-GHOSTTY_CONFIG_LOCATION=$PWD/ghostty/ghostty.config;
+GHOSTTY_CONFIG_LOCATION=$PWD/ghostty/config.ghostty;
 
 if uname -r | grep -i microsoft > /dev/null 2>&1; then
     echo -e "\n##### ⚠️ Ghostty isn't available on Windows ####################################";
+elif uname -a | grep -i darwin > /dev/null 2>&1; then
+    echo -e "\n##### Ghostty configs for MacOS ################################################";
+    echo "ln -fs $GHOSTTY_CONFIG_LOCATION $HOME/Library/Application\ Support/com.mitchellh.ghostty/.;";
 else
-    echo -e "\n##### Ghostty configs for MacOS and Linux ######################################";
+    echo -e "\n##### Ghostty configs for Linux ################################################";
     echo "ln -fs $GHOSTTY_CONFIG_LOCATION $HOME/.config/.;";
 fi
 
