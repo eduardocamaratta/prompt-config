@@ -27,7 +27,6 @@ run         = "if command -v ghostty; then ghostty +show-config --default --docs
 [shell_alias]
 ghostty-config    = "mise run --skip-tools ghostty-config"
 unused-mise-tools = "mise run --skip-tools unused-tools"
-update-npm        = "mise run --skip-tools update-npm-packages"
 update-packages   = "mise run --skip-tools update-packages"
 
 # Ruby is sometimes a bit tricky to install with mise
