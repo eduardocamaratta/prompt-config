@@ -51,8 +51,7 @@ case $CURRENT_SHELL in
         echo -e "\n##### Bash configs for Linux and WSL ###########################################";
         LOCAL_RC_LOCATION=$LOCAL_BASE_RC_LOCATION/bash-wsl-linux;
         echo "ln -fs $LOCAL_RC_LOCATION/bashrc $HOME/.bashrc;";
-        echo "ln -fs $LOCAL_RC_LOCATION/git-completion.bash $TARGET_EXTRA_CONFIG_LOCATION/.;";
-        ;;
+        curl -fs "https://raw.githubusercontent.com/git/git/refs/tags/v$(git version | grep -Eo '\d+\.\d+\.\d+')/contrib/completion/git-completion.bash" -o $TARGET_EXTRA_CONFIG_LOCATION/git-completion.bash
     zsh)
         echo -e "\n##### Zsh configs for MacOS ####################################################";
         LOCAL_RC_LOCATION=$LOCAL_BASE_RC_LOCATION/zsh-mac;
