@@ -55,7 +55,14 @@ CONFIGS = {
                     'target_name' => '.zshrc'
                 }
             },
-            { 'aliases' => { 'target_path' => '~/.config/camaratta-dotfiles/shell' } }
+            { 'aliases' => { 'target_path' => '~/.config/camaratta-dotfiles/shell' } },
+            {
+                'git-completion.bash' => {
+                    'tags' => ['bash'],
+                    'target_path' => '~/.config/camaratta-dotfiles/shell',
+                    'url' => 'https://raw.githubusercontent.com/git/git/refs/tags/v$GIT_VERSION/contrib/completion/git-completion.bash'
+                }
+            }
         ],
         'target_path' => '~'
     },
