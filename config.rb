@@ -13,7 +13,8 @@ CONFIGS = {
                     'target_path' => '~/Library/Application Support/com.mitchellh.ghostty'
                 }
             }
-        ]
+        ],
+        'apps' => ['ghostty']
     },
     'git' => {
         'files' => [
@@ -26,14 +27,16 @@ CONFIGS = {
         'files' => [
             'config.toml'
         ],
-        'target_path' => '~/.config/mise'
+        'target_path' => '~/.config/mise',
+        'apps' => ['mise']
     },
     'mise/tasks' => {
         'files' => [
             'unused-tools.sh',
             'update-packages.sh'
         ],
-        'target_path' => '~/.config/mise/tasks'
+        'target_path' => '~/.config/mise/tasks',
+        'apps' => ['mise']
     },
     'shell' => {
         'files' => [
@@ -70,6 +73,7 @@ CONFIGS = {
         'files' => [
             'starship.toml'
         ],
-        'target_path' => '~/.config'
+        'target_path' => '~/.config',
+        'apps' => ['starship']
     }
 }
