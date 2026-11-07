@@ -3,7 +3,7 @@
 # Ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -lah'
+alias l='ls -lahG'
 
 # Apply workaround for clear command if ghostty is installed
 if command -v ghostty &>/dev/null; then
