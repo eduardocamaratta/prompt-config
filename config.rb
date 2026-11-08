@@ -14,7 +14,7 @@ CONFIGS = {
                 }
             }
         ],
-        'apps' => ['ghostty']
+        'tags' => ['ghostty']
     },
     'git' => {
         'files' => [
@@ -28,7 +28,7 @@ CONFIGS = {
             'config.toml'
         ],
         'target_path' => '~/.config/mise',
-        'apps' => ['mise']
+        'tags' => ['mise']
     },
     'mise/tasks' => {
         'files' => [
@@ -36,7 +36,7 @@ CONFIGS = {
             'update-packages.sh'
         ],
         'target_path' => '~/.config/mise/tasks',
-        'apps' => ['mise']
+        'tags' => ['mise']
     },
     'shell' => {
         'files' => [
@@ -74,6 +74,8 @@ CONFIGS = {
             'starship.toml'
         ],
         'target_path' => '~/.config',
-        'apps' => ['starship']
+        'tags' => ['starship']
     }
 }
+
+APP_TAGS = ['ghostty', 'mise', 'starship']
