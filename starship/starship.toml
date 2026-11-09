@@ -31,6 +31,15 @@
 #008000 #FFFFFF
 #FFFFFF
 
+# Purple/Blue
+#6B0052 #FFFFFF
+#B10087 #FFFFFF
+#6215A6 #FFFFFF
+#4248FF #FFFFFF
+#009CF4 #000000
+#FFFFFF
+
+
 # Optional first section
 #[  ](fg:#FFFFFF bg:#903284)\
 #[](fg:prev_bg bg:#3B237A)$username\
