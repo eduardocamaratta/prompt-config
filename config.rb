@@ -78,4 +78,6 @@ CONFIGS = {
     }
 }
 
-APP_TAGS = ['ghostty', 'mise', 'starship']
+TAGS = {
+    'apps' => ['ghostty', 'mise', 'starship']
+}
