@@ -79,5 +79,9 @@ CONFIGS = {
 }
 
 TAGS = {
-    'apps' => ['ghostty', 'mise', 'starship']
+    'commands' => {
+        'ghostty' => 'which ghostty',
+        'mise' => 'which mise',
+        'starship' => 'which starship'
+    }
 }
