@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #MISE description="Update packages installed with apt or brew (depending on the OS)"
+#MISE interactive=true
 
 #
 # Copyright © 2026 Eduardo Camaratta
@@ -14,6 +15,8 @@
 #
 
 if [[ "$(uname -s)" == "Linux" ]]; then # uname -s = kernel name
+    sudo -v;
+
     sudo apt update;
     sudo apt upgrade;
     sudo apt autoremove;
